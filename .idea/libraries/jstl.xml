@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jstl">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/JSTL/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/JSTL/standard.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

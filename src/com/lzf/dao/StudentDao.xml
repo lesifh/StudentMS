@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzf.dao.StudentDao">
+    <!--根据id查找学生 -->
+    <select id="findStudentById" parameterType="Integer" resultType="com.lzf.po.Student">
+        select * from students where id = #{id}
+    </select>
+
+    <!--    多条件查找学生信息-->
+    <select id="findStudentByConditions"
+            parameterType="com.lzf.po.Student"
+            resultType="com.lzf.po.Student" >
+        select * from students where 1 = 1
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+    </select>
+
+    <select id="findAllStudents" resultType="com.lzf.po.Student">
+        select * from students;
+    </select>
+
+    <update id="updateStudent" parameterType="com.lzf.po.Student">
+        update students
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="age != null and age != ''">
+                age = #{age},
+            </if>
+            <if test="gender != null and gender != ''">
+                gender = #{gender},
+            </if>
+            <if test="number != null and number != ''">
+                number = #{number},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="status != null and status != ''">
+                status = #{status}
+            </if>
+        </set>
+        where  id = #{id}
+    </update>
+
+    <delete id="deleteStudent" parameterType="Integer" >
+        delete from students where id = #{id};
+    </delete>
+
+    <insert id="addStudent" parameterType="com.lzf.po.Student">
+        insert into students(name, age, gender, number, address, status)
+        values(#{name}, #{age}, #{gender}, #{number}, #{address}, #{status})
+    </insert>
+
+</mapper>
