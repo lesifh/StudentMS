@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="commons-dbcp2-2.1.1-tests">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/数据库连接池/commons-pool2-2.4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/数据库连接池/commons-dbcp2-2.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

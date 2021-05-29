@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="commons-logging-1.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/Spring基础/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/Spring基础/spring-aop-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/Spring基础/spring-beans-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/Spring基础/spring-context-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/Spring基础/spring-core-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/Spring基础/spring-expression-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/aspectjweaver-1.8.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/spring-framework-4.3.6.RELEASE/libs/spring-jdbc-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/spring-framework-4.3.6.RELEASE/libs/spring-tx-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/spring-framework-4.3.6.RELEASE/libs/spring-webmvc-4.3.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/spring-framework-4.3.6.RELEASE/libs/spring-web-4.3.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
