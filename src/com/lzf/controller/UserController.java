@@ -35,16 +35,15 @@ public class UserController {
         String pwdInDB = this.userService.login(username);
         // 如果未找到该username，则为该账户未注册
         if (pwdInDB == null || pwdInDB == ""){
-            model.addAttribute("msg", "该账户未注册");
+            model.addAttribute("msg", "未注册");
             return "login";
         }else {
             // 如果密码正确 执行登录
             if (password.equals(pwdInDB)){
-                System.out.println("登录成功");
                 session.setAttribute("USER_SESSION", user);
+                model.addAttribute("msg", "登陆成功");
                 // 返回学生信息页面
                 ArrayList<Student> students = studentService.findAllStudents();
-
                 if (students.size() == 0) {
                     System.out.println("无结果");
                     model.addAttribute("noStudents", "无结果");
@@ -55,7 +54,7 @@ public class UserController {
                 return "students";
             } else {
                 System.out.println("密码错误");
-                model.addAttribute("msg", "密码错误，请重新输入");
+                model.addAttribute("msg", "密码错误");
                 return "login";
             }
         }
@@ -66,17 +65,29 @@ public class UserController {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
-        int rows = this.userService.register(user);
         // 查询数据库中是否有相同用户名
-//        User userInDB = ("");
-        if (rows > 0) {
-            System.out.println("注册成功");
-            // 自动登录
-            return "login";
-        } else {
-            System.out.println("注册失败");
+        // 从数据库中得到用户对象
+        User userInDB = (User) userService.getUserByUsername(username);
+        // 数据库中已有重名对象
+        if (userInDB != null) {
+            System.out.println(userInDB);
+            System.out.println("重名");
+            model.addAttribute("msg", "重名");
             return "register";
+            // 无重名
+        } else {
+            int rows = this.userService.register(user);
+            if (rows > 0) {
+                model.addAttribute("msg", "注册成功");
+                System.out.println("注册成功");
+                // 跳转到登录页面
+                return "login";
+            } else {
+                model.addAttribute("msg", "服务器错误");
+                return "register";
+            }
         }
+
     }
 
     @RequestMapping("doLogout")
@@ -106,4 +117,8 @@ public class UserController {
         return "students";
     }
 
+    // 测试连接
+    public String test(){
+        return "测试成功";
+    }
 }

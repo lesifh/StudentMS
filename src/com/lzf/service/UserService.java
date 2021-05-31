@@ -7,4 +7,7 @@ public interface UserService {
     public Integer register(User user);
     // 登录
     public String login(String username);
+    // 通过username得到对象
+    public User getUserByUsername(String username);
+
 }

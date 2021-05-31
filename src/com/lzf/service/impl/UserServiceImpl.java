@@ -29,8 +29,11 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public User getUserByUsername(String username) {
+        return this.userDao.findUserByAccount(username);
+    }
 
 
-    // 查看用户名是否已被占用
 
 }

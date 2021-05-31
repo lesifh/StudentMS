@@ -13,7 +13,6 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(javax.servlet.http.HttpServletRequest httpServletRequest,
                              javax.servlet.http.HttpServletResponse httpServletResponse,
                              Object o) throws Exception {
-        System.out.println("拦截器出击！");
         // 获取请求的url
         String url = httpServletRequest.getRequestURI();
         // 除了登录、登录页面以外，其他url都进行拦截处理
@@ -25,11 +24,9 @@ public class LoginInterceptor implements HandlerInterceptor {
         HttpSession httpSession = httpServletRequest.getSession();
         User user = (User) httpSession.getAttribute("USER_SESSION");
         // 判断session中是否有用户数据，如果有，则已经登录，返回true，继续进行后续操作
-        System.out.println("user:"+user);
         if (user != null){
             return true;
         }
-        System.out.println("未登录");
         // 不符合条件的给出提示信息，并转发到登录页面
         httpServletRequest.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(httpServletRequest, httpServletResponse);
         return false;
