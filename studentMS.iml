@@ -27,5 +27,7 @@
     <orderEntry type="library" name="mybatis-spring-1.3.1" level="project" />
     <orderEntry type="library" name="commons-dbcp2-2.1.1-tests" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
+    <orderEntry type="library" name="spring-web-4.3.6.RELEASE" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="mybatis-spring-1.3.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/spring-mybatis/mybatis-spring-1.3.1.jar!/" />
+      <root url="jar://D:/Code/JAVA/javaWeb开发常用jar包/spring-mybatis/mybatis-spring-1.3.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

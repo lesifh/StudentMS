@@ -3,15 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-<!--    配置加载spring文件的监听器-->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:config/applicationContext.xml</param-value>
-    </context-param>
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-<!--    编码过滤器-->
+    <!--    编码过滤器-->
     <!-- 配置 CharacterEncodingFilter解决中文乱码问题-->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
@@ -27,6 +19,14 @@
         <filter-name>CharacterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+<!--    配置加载spring文件的监听器-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:config/applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 <!--    配置Spring MVC前端控制器-->
     <servlet>
         <servlet-name>springmvc</servlet-name>
@@ -44,5 +44,13 @@
         <servlet-name>springmvc</servlet-name>
 <!--        /:拦截所有请求，除了jsp-->
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+<!--    配置默认首页-->
+    <welcome-file-list>
+        <welcome-file>index</welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/index</url-pattern>
     </servlet-mapping>
 </web-app>

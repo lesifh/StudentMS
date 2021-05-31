@@ -28,20 +28,31 @@ public class StudentController {
     // 根据多条件返回学生信息
     @RequestMapping("findStudentByConditions")
     public String findStudent(String name, String address, Integer id, Model model) {
+        // 什么都不填表示全局搜索
         if (name != null && name != "" || address != null && address != "" || id != null && id != 0) {
             Student student = new Student();
+            System.out.println("name="+name);
             student.setName(name);
             student.setAddress(address);
             student.setId(id);
             ArrayList<Student> result = studentService.findStudentByConditions(student);
+            if (result.size() == 0) {
+                model.addAttribute("noStudents", "无结果");
+            } else {
+                model.addAttribute("students", result);
+            }
             model.addAttribute("students", result);
             return "students";
         } else {
             ArrayList<Student> students = studentService.findAllStudents();
-            model.addAttribute("students", students);
+            System.out.println("sudents的长度"+students.size());
+            if (students.size() == 0) {
+                model.addAttribute("noStudents", "无结果");
+            } else {
+                model.addAttribute("students", students);
+            }
             return "students";
         }
-
     }
 
     // 列出所有学生

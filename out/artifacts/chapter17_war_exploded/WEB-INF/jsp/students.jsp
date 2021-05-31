@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: 24186
@@ -6,7 +5,7 @@
   Time: 0:35
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -18,9 +17,11 @@
     </style>
 </head>
 <body>
+    当前用户：${USER_SESSION.username} <a href="${pageContext.request.contextPath}/doLogout">退出</a>
+    <br/>
     <button><a href="${pageContext.request.contextPath}/toAdd">增加学生</a></button>
     <c:if test="${searchCondition != null and searchCondition != ''}">
-        <form action="${pageContext.request.contextPath}/findStudent">
+        <form method="post" action="${pageContext.request.contextPath}/findStudent">
             ID：<input type="text" name="id" value="${searchCondition.id}"> &nbsp;&nbsp;&nbsp;&nbsp;
             姓名：<input type="text" name="name" value="${searchCondition.name}">&nbsp;&nbsp;&nbsp;&nbsp;
             地址：<input type="text" name="address" value="${searchCondition.address}">&nbsp;&nbsp;&nbsp;
@@ -29,7 +30,7 @@
         </form>
     </c:if>
     <c:if test="${searchCondition == null or searchCondition == ''}">
-        <form action="${pageContext.request.contextPath}/findStudentByConditions">
+        <form method="post" action="${pageContext.request.contextPath}/findStudentByConditions">
             ID：<input type="text" name="id" > &nbsp;&nbsp;&nbsp;&nbsp;
             姓名：<input type="text" name="name" >&nbsp;&nbsp;&nbsp;&nbsp;
             地址：<input type="text" name="address" >&nbsp;&nbsp;&nbsp;
@@ -78,6 +79,10 @@
                 </tr>
             </c:forEach>
         </c:if>
+        <td colspan="8"><c:if test="${noStudents != null}">
+            ${noStudents}
+        </c:if></td>
     </table>
+
 </body>
 </html>

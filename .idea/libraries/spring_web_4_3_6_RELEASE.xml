@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spring-web-4.3.6.RELEASE">
+    <CLASSES>
+      <root url="jar://D:/Code/JAVA/javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/spring-framework-4.3.6.RELEASE/libs/spring-web-4.3.6.RELEASE.jar!/" />
+      <root url="jar://D:/Code/JAVA/javaWeb开发常用jar包/javaWeb常用jar包/Spring框架包/spring-framework-4.3.6.RELEASE/libs/spring-webmvc-4.3.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
