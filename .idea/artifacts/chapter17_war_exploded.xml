@@ -13,6 +13,7 @@
           <element id="library" level="project" name="mybatis-spring-1.3.1" />
           <element id="library" level="project" name="commons-dbcp2-2.1.1-tests" />
           <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="spring-web-4.3.6.RELEASE" />
         </element>
       </element>
     </root>
