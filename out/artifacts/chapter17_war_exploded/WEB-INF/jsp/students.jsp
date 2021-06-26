@@ -117,7 +117,7 @@
             </tr>
         </c:if>
         <c:if test="${students != null and students != ''}">
-            <c:forEach items="${students}" var="student" >
+            <c:forEach items="${students.list}" var="student" >
                 <tr>
                     <td>${student.name}</td>
                     <td>${student.age}</td>

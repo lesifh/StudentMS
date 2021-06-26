@@ -1,7 +1,6 @@
 package com.lzf.dao;
 
 import com.lzf.po.Student;
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.ArrayList;
 

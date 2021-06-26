@@ -14,6 +14,9 @@
           <element id="library" level="project" name="commons-dbcp2-2.1.1-tests" />
           <element id="library" level="project" name="jstl" />
           <element id="library" level="project" name="spring-web-4.3.6.RELEASE" />
+          <element id="library" level="project" name="pagehelper-5.1.4" />
+          <element id="library" level="module" name="JUnit4" module-name="studentMS" />
+          <element id="library" level="project" name="servlet-api" />
         </element>
       </element>
     </root>

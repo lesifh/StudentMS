@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="pagehelper-5.1.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/分页查询/pagehelper-5.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javaWeb开发常用jar包/分页查询/jsqlparser-0.9.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

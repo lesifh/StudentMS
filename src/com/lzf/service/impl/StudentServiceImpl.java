@@ -1,5 +1,7 @@
 package com.lzf.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lzf.dao.StudentDao;
 import com.lzf.po.Student;
 import com.lzf.service.StudentService;
@@ -7,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -16,19 +18,33 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentDao studentDao;
 
+    // 分页查询
+    public PageInfo<Student> findPage(Student student, int pageNum, int pageSize){
+        // 第二种实现方法
+        return PageHelper.startPage(pageNum, pageSize).doSelectPageInfo(()->{
+            studentDao.findAllStudents();
+        });
+    }
+
+
     // 根据id查找学生
     public Student findStudentById(Integer id){
         return this.studentDao.findStudentById(id);
     };
 
     // 多条件查找学生
-    public ArrayList<Student> findStudentByConditions(Student student) {
-        return this.studentDao.findStudentByConditions(student);
+    public PageInfo<Student> findStudentByConditions(Student student, int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Student> list = this.studentDao.findStudentByConditions(student);
+        PageInfo<Student> page = new PageInfo<>(list);
+        return page;
     }
 
     // 查找所有学生
-    public ArrayList<Student>  findAllStudents() {
-        return this.studentDao.findAllStudents();
+    public PageInfo<Student> findAllStudents(int pageNum, int pageSize) {
+        return PageHelper.startPage(pageNum, pageSize).doSelectPageInfo(()-> {
+            studentDao.findAllStudents();
+        });
     }
 
     // 编辑学生

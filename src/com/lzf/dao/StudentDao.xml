@@ -25,7 +25,7 @@
     </select>
 
     <select id="findAllStudents" resultType="com.lzf.po.Student">
-        select * from students;
+        select * from students
     </select>
 
     <update id="updateStudent" parameterType="com.lzf.po.Student">
@@ -54,7 +54,7 @@
     </update>
 
     <delete id="deleteStudent" parameterType="Integer" >
-        delete from students where id = #{id};
+        delete from students where id = #{id}
     </delete>
 
     <insert id="addStudent" parameterType="com.lzf.po.Student">

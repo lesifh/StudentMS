@@ -37,12 +37,27 @@
         <property name="dataSource" ref="dataSource"/>
         <!--    指定 Mybatis 配置文件位置-->
         <property name="configLocation" value="classpath:config/mybatis-config.xml"/>
+        <!--  pageHelper插件配置      -->
+        <!-- 注意其他配置 -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <!--使用下面的方式配置参数，一行配置一个 -->
+                        <value>
+                            helperDialect=mysql
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
 
 <!--    4.配置mapper扫描器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.lzf.dao"/>
     </bean>
+
 <!--    5.扫描service-->
     <context:component-scan base-package="com.lzf.service"/>
 </beans>

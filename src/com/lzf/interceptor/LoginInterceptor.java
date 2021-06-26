@@ -28,6 +28,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }
         // 不符合条件的给出提示信息，并转发到登录页面
+        System.out.println("没有权限");
         httpServletRequest.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(httpServletRequest, httpServletResponse);
         return false;
     }
