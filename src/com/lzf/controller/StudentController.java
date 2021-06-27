@@ -28,6 +28,8 @@ public class StudentController {
                               @RequestParam(defaultValue = "1") Integer pageNum,
                               @RequestParam(defaultValue = "10") Integer pageSize) {
         // 什么都不填表示全局搜索
+        System.out.println("pageNum="+pageNum);
+        System.out.println("pageSize="+pageSize);
         if (name != null && name != "" || address != null && address != "" || id != null && id != 0) {
             Student student = new Student();
             System.out.println("name="+name);
@@ -49,7 +51,7 @@ public class StudentController {
             if (page.getTotal() == 0) {
                 model.addAttribute("noStudents", "无结果");
             } else {
-                model.addAttribute("students", page.getTotal());
+                model.addAttribute("students", page);
             }
             return "students";
         }
